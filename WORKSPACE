@@ -4,6 +4,20 @@ load("//ml_metadata:repo.bzl", "clean_dep")
 load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 
 http_archive(
+    name = "rules_cc",
+    sha256 = "623cf8337a6f25fb72793e8c7553a06a3af26d2b591b61405b5f257a4192d19d",
+    strip_prefix = "rules_cc-0.0.1",
+    urls = ["https://github.com/bazelbuild/rules_cc/archive/refs/tags/0.0.1.zip"],
+)
+
+# The following is needed to use tfx_bsl with bazel version > 4.0.
+# For more information, see: https://github.com/bazelbuild/rules_cc/issues/12
+# TODO(b/262391211): Remove this once tfx_bsl supports bazel > 4.0.
+load("@rules_cc//cc:repositories.bzl", "rules_cc_dependencies")
+
+rules_cc_dependencies()
+
+http_archive(
     name = "postgresql",
     build_file = "//ml_metadata:postgresql.BUILD",
     workspace_file_content = "//ml_metadata:postgresql.WORKSPACE",
