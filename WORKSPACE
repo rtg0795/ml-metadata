@@ -5,7 +5,7 @@ load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 
 http_archive(
     name = "rules_cc",
-    sha256 = "623cf8337a6f25fb72793e8c7553a06a3af26d2b591b61405b5f257a4192d19d",
+    sha256 = "d9f4686206d20d7c5513a39933aa1148d21d6ce16134ae4c4567c40bbac359bd",
     strip_prefix = "rules_cc-0.0.1",
     urls = ["https://github.com/bazelbuild/rules_cc/archive/refs/tags/0.0.1.zip"],
 )
