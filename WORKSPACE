@@ -4,11 +4,21 @@ load("//ml_metadata:repo.bzl", "clean_dep")
 load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 
 http_archive(
+    name = "bazel_skylib",
+    sha256 = "1c538a72a0887e598383e29a4879204018301540300957500582260171a8bba1",
+    urls = [
+        "https://mirror.bazel.build/github.com/bazelbuild/bazel-skylib/releases/download/1.2.1/bazel-skylib-1.2.1.tar.gz",
+        "https://github.com/bazelbuild/bazel-skylib/releases/download/1.2.1/bazel-skylib-1.2.1.tar.gz",
+    ],
+)
+
+http_archive(
     name = "rules_cc",
     sha256 = "d9f4686206d20d7c5513a39933aa1148d21d6ce16134ae4c4567c40bbac359bd",
     strip_prefix = "rules_cc-0.0.1",
     urls = ["https://github.com/bazelbuild/rules_cc/archive/refs/tags/0.0.1.zip"],
 )
+
 
 # The following is needed to use tfx_bsl with bazel version > 4.0.
 # For more information, see: https://github.com/bazelbuild/rules_cc/issues/12
