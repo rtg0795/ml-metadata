@@ -167,9 +167,9 @@ http_archive(
 
 http_archive(
     name = "com_github_grpc_grpc",
-    urls = ["https://github.com/grpc/grpc/archive/v1.46.3.tar.gz"],
-    sha256 = "d6cbf22cb5007af71b61c6be316a79397469c58c82a942552a62e708bce60964",
-    strip_prefix = "grpc-1.46.3",
+    urls = ["https://github.com/grpc/grpc/archive/v1.54.2.tar.gz"],
+    sha256 = "26c281c8413926e8496464a91900b73c9c61b601f0ed594183794380b0fb609f",
+    strip_prefix = "grpc-1.54.2",
 )
 
 load("@com_github_grpc_grpc//bazel:grpc_deps.bzl", "grpc_deps")
