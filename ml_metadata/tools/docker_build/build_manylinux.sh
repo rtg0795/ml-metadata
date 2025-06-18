@@ -53,6 +53,8 @@ function setup_environment() {
 
 function build_wheel() {
   rm -rf dist
+  # Need to be in the project root to run setup.py
+  cd "${WORKING_DIR}"
   "${PYTHON_BIN_PATH}" setup.py bdist_wheel
 }
 
