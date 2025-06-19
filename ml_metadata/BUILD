@@ -29,9 +29,9 @@ selects.config_setting_group(
 )
 
 _public_protos = [
-    "//ml_metadata/simple_types/proto:simple_types_pb2.py",
-    "//ml_metadata/proto:metadata_store_pb2.py",
-    "//ml_metadata/proto:metadata_store_service_pb2.py",
+    "//ml_metadata/simple_types/proto:simple_types_pb2",
+    "//ml_metadata/proto:metadata_store_pb2",
+    "//ml_metadata/proto:metadata_store_service_pb2",
     "//ml_metadata/proto:metadata_store_service_pb2_grpc.py",
 ]
 

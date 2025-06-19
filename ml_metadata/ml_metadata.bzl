@@ -101,6 +101,15 @@ def ml_metadata_proto_library_py(
         use_grpc_plugin = use_grpc_plugin,
     )
 
+    native.py_binary(
+        name = name.replace("_py_pb2", ""),
+        srcs = [name],
+        main = name,
+        visibility = visibility,
+        deps = [name],
+    )
+
+
 def ml_metadata_proto_library_go(
         name,
         deps = [],

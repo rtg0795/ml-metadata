@@ -48,6 +48,19 @@ ml_metadata_proto_library_py(
     use_grpc_plugin = True,
 )
 
+native.py_library(
+    name = "metadata_store_pb2",
+    srcs = ["metadata_store.py"],
+    deps = [":metadata_store_py_pb2"],
+)
+
+native.py_library(
+    name = "metadata_store_service_pb2",
+    srcs = ["metadata_store_service.py"],
+    deps = [":metadata_store_service_py_pb2"],
+)
+
+
 ml_metadata_proto_library_go(
     name = "metadata_store_go_proto",
     srcs = ["metadata_store.proto"],

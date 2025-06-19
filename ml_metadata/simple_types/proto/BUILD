@@ -32,3 +32,10 @@ ml_metadata_proto_library_py(
     oss_deps = ["//ml_metadata/proto:metadata_store_py_pb2"],
     proto_library = "simple_types_proto",
 )
+
+native.py_library(
+    name = "simple_types_pb2",
+    srcs = ["simple_types.py"],
+    deps = [":simple_types_py_pb2"],
+)
+
