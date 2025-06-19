@@ -1,12 +1,9 @@
 workspace(name = "ml_metadata")
 
-load("//ml_metadata:repo.bzl", "clean_dep")
-load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
+load("//ml_metadata:repo.bzl", "clean_dep", "mlmd_repositories")
 
-native.bind(
-      name = "com_google_protobuf_cc_proto_library_gen",
-      actual = "@com_google_protobuf//:cc_proto_library_gen",
-)
+mlmd_repositories()
+
 
 http_archive(
     name = "bazel_skylib",

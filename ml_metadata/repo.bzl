@@ -124,5 +124,10 @@ mlmd_http_archive = repository_rule(
 
 # Sanitize a dependency so that it works correctly from code that includes
 # ML Metadata as a submodule.
-def clean_dep(dep):
-    return str(Label(dep))
+def mlmd_repositories():
+  """Register all the MLMD repositories."""
+  native.bind(
+      name = "com_google_protobuf_cc_proto_library_gen",
+      actual = "@com_google_protobuf//:cc_proto_library_gen",
+  )
+
