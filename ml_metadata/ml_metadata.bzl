@@ -73,10 +73,6 @@ def ml_metadata_proto_library(
     cc_proto_library(
         name = name,
         deps = [name + "_proto"],
-        cc_libs = ["@com_google_protobuf//:protobuf"],
-        protoc = "@com_google_protobuf//:protoc",
-        default_runtime = "@com_google_protobuf//:protobuf",
-        use_grpc_plugin = use_grpc_plugin,
         testonly = testonly,
         visibility = visibility,
     )
