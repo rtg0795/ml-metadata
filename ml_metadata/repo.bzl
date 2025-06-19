@@ -131,3 +131,5 @@ def mlmd_repositories():
       actual = "@com_google_protobuf//:cc_proto_library_gen",
   )
 
+def clean_dep(dep):
+    return str(Label(dep))
