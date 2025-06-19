@@ -3,6 +3,11 @@ workspace(name = "ml_metadata")
 load("//ml_metadata:repo.bzl", "clean_dep")
 load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 
+native.bind(
+      name = "com_google_protobuf_cc_proto_library_gen",
+      actual = "@com_google_protobuf//:cc_proto_library_gen",
+)
+
 http_archive(
     name = "bazel_skylib",
     sha256 = "f7be3474d42aae265405a592bb7da8e171919d74c16f082a5457840f06054728",
