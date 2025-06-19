@@ -65,10 +65,14 @@ def ml_metadata_proto_library(
     use_grpc_plugin = None
     if cc_grpc_version:
         use_grpc_plugin = True
-    cc_proto_library(
-        name = name,
+    native.proto_library(
+        name = name + "_proto",
         srcs = srcs,
         deps = deps,
+    )
+    cc_proto_library(
+        name = name,
+        deps = [name + "_proto"],
         cc_libs = ["@com_google_protobuf//:protobuf"],
         protoc = "@com_google_protobuf//:protoc",
         default_runtime = "@com_google_protobuf//:protobuf",
